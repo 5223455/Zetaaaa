@@ -1,14 +1,18 @@
 import pandas as pd
-screen_time=[2,3,4,5,7,9]
-sleep_hours=[4,5,6,7,8,3]
-student_name=["Saketh","Balaya!","JaiBabu!","katterMummy","Bhahubali","kattapa"]
-study_hours=[3,4,5,7,2,5]
-dict1={
-    "screen_time":screen_time,
-    "sleep_hours":sleep_hours,
-    "student_name":student_name,
-    "study_hours":study_hours,
+data = {
+    "Name": ["John", "Alice", "Bob", "Diana"],
+    "Age": [28, 34, 23, 29],
+    "Department": ["HR", "IT", "Marketing", "Finance"],
+    "Salary": [45000, 60000, 35000, 50000]
 }
-print(dict1)
-df=pd.DataFrame(dict1)
+df = pd.DataFrame(data)
+print("First 2 rows of the DataFrame:")
+print(df.head(2))
+df["Bonus"] = df["Salary"] * 0.10
+print("\nDataFrame after adding the 'Bonus' column:")
 print(df)
+average_salary = df["Salary"].mean()
+print("\nThe average salary of employees is:", average_salary)
+filtered_df = df[df["Age"] > 25]
+print("\nEmployees older than 25:")
+print(filtered_df)
